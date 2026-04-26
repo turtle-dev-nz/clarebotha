@@ -6,7 +6,11 @@ export function Bio() {
     <section id="about" className="bio">
       <div className="container bio__inner">
         <div className="bio__image-wrap">
-          <div className="bio__image-placeholder" role="img" aria-label="Clare Botha in her studio" />
+          <img
+            className="bio__image"
+            src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80"
+            alt="Clare Botha in her studio"
+          />
         </div>
 
         <div className="bio__text">

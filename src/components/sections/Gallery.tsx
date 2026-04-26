@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import "./Gallery.css";
 
 interface GalleryItem {
@@ -6,7 +5,7 @@ interface GalleryItem {
   title: string;
   year: string;
   medium: string;
-  style: CSSProperties;
+  imageUrl: string;
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
@@ -15,42 +14,42 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: "Terracotta Form I",
     year: "2024",
     medium: "Terracotta, wood fired",
-    style: { background: "linear-gradient(150deg, #c8855a 0%, #8b4513 100%)" },
+    imageUrl: "https://images.unsplash.com/photo-1565193566449-d9d11cdd5694?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 2,
     title: "Garden Vessel",
     year: "2023",
     medium: "Stoneware, glazed",
-    style: { background: "linear-gradient(150deg, #7a6555 0%, #3d2a0e 100%)" },
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 3,
     title: "Figure Study III",
     year: "2024",
     medium: "Earthenware, unglazed",
-    style: { background: "linear-gradient(150deg, #b09585 0%, #6a5040 100%)" },
+    imageUrl: "https://images.unsplash.com/photo-1589927986089-35812378533a?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 4,
     title: "Clay Series II",
     year: "2023",
     medium: "Porcelain",
-    style: { background: "linear-gradient(150deg, #d4b896 0%, #a07848 100%)" },
+    imageUrl: "https://images.unsplash.com/photo-1493894473891-0f6e2ec2ee9a?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 5,
     title: "Sculptural Bowl",
     year: "2022",
     medium: "Stoneware",
-    style: { background: "linear-gradient(150deg, #8a7a6a 0%, #4a3b2a 100%)" },
+    imageUrl: "https://images.unsplash.com/photo-1607466374561-e4fa92cc4e9d?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 6,
     title: "Earth Form IV",
     year: "2024",
     medium: "Terracotta",
-    style: { background: "linear-gradient(150deg, #b86838 0%, #6a3818 100%)" },
+    imageUrl: "https://images.unsplash.com/photo-1508253007823-cc2a39c0b3dc?auto=format&fit=crop&w=600&q=80",
   },
 ];
 
@@ -71,7 +70,12 @@ export function Gallery() {
           {GALLERY_ITEMS.map((item) => (
             <article key={item.id} className="gallery__card">
               <div className="gallery__image-wrap">
-                <div className="gallery__image" style={item.style} role="img" aria-label={item.title} />
+                <img
+                  className="gallery__image"
+                  src={item.imageUrl}
+                  alt={item.title}
+                  loading="lazy"
+                />
               </div>
               <div className="gallery__info">
                 <h3 className="gallery__title">{item.title}</h3>

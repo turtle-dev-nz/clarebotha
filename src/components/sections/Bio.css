@@ -10,9 +10,11 @@
   align-items: center;
 }
 
-.bio__image-placeholder {
+.bio__image {
+  display: block;
+  width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(155deg, #d4b898 0%, #a07a58 45%, #5e3a1e 100%);
+  object-fit: cover;
   border-radius: 2px;
   box-shadow: var(--shadow-lg);
 }
@@ -59,7 +61,7 @@
     grid-template-columns: 1fr;
   }
 
-  .bio__image-placeholder {
+  .bio__image {
     aspect-ratio: 16 / 9;
     max-height: 380px;
   }

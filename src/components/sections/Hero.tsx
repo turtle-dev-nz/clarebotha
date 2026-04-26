@@ -1,11 +1,13 @@
-import heroImg from "../../assets/hero.png";
 import { scrollToSection } from "../../utils/scrollTo";
 import "./Hero.css";
+
+const HERO_IMAGE_URL =
+  "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1920&q=80";
 
 export function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero__bg" style={{ backgroundImage: `url(${heroImg})` }} aria-hidden="true" />
+      <div className="hero__bg" style={{ backgroundImage: `url(${HERO_IMAGE_URL})` }} aria-hidden="true" />
       <div className="hero__overlay" aria-hidden="true" />
 
       <div className="hero__content">
